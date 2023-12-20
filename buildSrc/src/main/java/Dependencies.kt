@@ -19,3 +19,7 @@ object Dependencies {
     val lifecycleViewModelKtx by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelKtx}" }
 
 }
+
+object Modules {
+    const val utilities = ":utilities"
+}
