@@ -11,4 +11,5 @@ object Versions {
 
     const val hilt = "2.48"
     const val hiltCompiler = "1.0.0-alpha01"
+    const val hiltNavigationCompose = "1.1.0"
 }
