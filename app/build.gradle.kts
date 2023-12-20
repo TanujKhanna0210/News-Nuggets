@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -61,4 +63,12 @@ dependencies {
     implementation(Dependencies.composeMaterial3)
 
     implementation(project(Modules.utilities))
+
+    implementation(Dependencies.hiltAndroid)
+    kapt(Dependencies.hiltCompiler)
+    kapt(Dependencies.hiltAndroidCompiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }
