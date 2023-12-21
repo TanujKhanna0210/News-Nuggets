@@ -4,6 +4,7 @@ import com.example.newsnuggets.data.AppConstants
 import com.example.newsnuggets.data.api.ApiService
 import com.example.newsnuggets.data.datasource.NewsDataSource
 import com.example.newsnuggets.data.datasource.NewsDataSourceImplementation
+import com.example.newsnuggets.ui.repository.NewsRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -58,6 +59,12 @@ class AppModule {
     @Singleton
     fun providesNewsDataSource(apiService: ApiService): NewsDataSource {
         return NewsDataSourceImplementation(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun providesNewsRepository(newsDataSource: NewsDataSource): NewsRepository {
+        return NewsRepository(newsDataSource)
     }
 
 }
