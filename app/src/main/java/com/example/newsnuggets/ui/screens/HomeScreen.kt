@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.newsnuggets.ui.components.EmptyStateComponent
 import com.example.newsnuggets.ui.components.Loader
 import com.example.newsnuggets.ui.components.NewsRowComponent
 import com.example.newsnuggets.ui.viewmodel.NewsViewModel
@@ -52,7 +53,11 @@ fun HomeScreen(
             is ResourceState.Success -> {
                 val response = (newsResponse as ResourceState.Success).data
                 Log.d(TAG, "Inside Success ${response.status} = ${response.totalResults}")
-                NewsRowComponent(page = page, article = response.articles[page])
+                if (response.articles.isNotEmpty()) {
+                    NewsRowComponent(page = page, article = response.articles[page])
+                } else {
+                    EmptyStateComponent()
+                }
             }
 
             is ResourceState.Error -> {
