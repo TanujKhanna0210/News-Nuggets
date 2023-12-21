@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.NewsNuggets" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="SplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/news_report</item>
+        <item name="postSplashScreenTheme">@style/Theme.NewsNuggets</item>
+    </style>
+
 </resources>
