@@ -76,6 +76,9 @@ dependencies {
     implementation(Dependencies.moshiConverter)
     implementation(Dependencies.gsonConverter)
     implementation(Dependencies.loggingInterceptor)
+
+    implementation(Dependencies.coroutinesCore)
+    implementation(Dependencies.coroutinesAndroid)
 }
 
 kapt {

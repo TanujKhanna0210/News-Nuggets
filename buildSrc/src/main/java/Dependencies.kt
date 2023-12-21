@@ -31,6 +31,9 @@ object Dependencies {
     val okhttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
     val loggingInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}" }
 
+    val coroutinesCore by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}" }
+    val coroutinesAndroid by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}" }
+
 }
 
 object Modules {
