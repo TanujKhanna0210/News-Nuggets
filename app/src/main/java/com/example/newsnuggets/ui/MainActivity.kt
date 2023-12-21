@@ -1,4 +1,4 @@
-package com.example.newsnuggets
+package com.example.newsnuggets.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
