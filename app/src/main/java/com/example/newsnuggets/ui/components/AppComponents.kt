@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -71,8 +73,8 @@ fun NormalTextComponent(text: String) {
             .wrapContentHeight()
             .padding(8.dp),
         style = TextStyle(
-            fontSize = 18.sp,
-            fontWeight = FontWeight.Normal,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Normal
         )
     )
 }
@@ -102,16 +104,20 @@ fun NewsRowComponent(page: Int, article: Article) {
             .background(Color.White)
     ) {
 
-        AsyncImage(
-            model = article.urlToImage,
-            contentDescription = "",
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(240.dp),
-            contentScale = ContentScale.Crop,
-            placeholder = painterResource(id = R.drawable.ic_placeholder_image),
-            error = painterResource(id = R.drawable.ic_placeholder_image)
-        )
+        Card(
+            elevation = CardDefaults.cardElevation(8.dp),
+        ) {
+            AsyncImage(
+                model = article.urlToImage,
+                contentDescription = "",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(240.dp),
+                contentScale = ContentScale.Crop,
+                placeholder = painterResource(id = R.drawable.ic_placeholder_image),
+                error = painterResource(id = R.drawable.ic_placeholder_image)
+            )
+        }
 
         Spacer(modifier = Modifier.size(8.dp))
 
